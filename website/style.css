@@ -1,0 +1,243 @@
+/* style.css */
+:root {
+    --primary-color: #FF0000; /* Red */
+    --secondary-color: #1a1a1a; /* Black */
+    --accent-color: white;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--accent-color);
+    color: var(--secondary-color);
+}
+
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 1rem 0;
+}
+
+.logo {
+    font-weight: bold;
+}
+
+nav ul li a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--primary-color);
+}
+
+.hero {
+    padding: 4rem 2rem;
+    background-color: var(--secondary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.hero img {
+    max-width: 150px;
+    border-radius: 50%;
+    margin-left: 2rem;
+    box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.hero {
+    position: relative;
+    width: 100%;
+    height: 50vh; /* Full viewport height */
+    overflow: hidden;
+}
+
+.hero-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1; /* Ensures it stays above the video */
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    color: white;
+}
+
+.video-container {
+    position: absolute;
+    top: 0; left: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: 0; /* Send behind content */
+    filter: brightness(80%); /* Reduce video brightness for readability */
+}
+
+video {
+    position: absolute;
+    top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 80%;
+    object-fit: cover; /* Ensures video covers the background */
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: #f8f8f8;
+    max-width: 600px;
+}
+
+section h3 {
+    position: relative;
+    color: var(--primary-color);
+    margin-top: 4rem;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.card {
+    position:relative;
+    background-color: #f8f8f8;
+    color: var(--secondary-color);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+    left: 2.5;
+}
+
+.card:hover {
+    transform: translateY(5px);
+}
+
+.card h4 {
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+form input, form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-top: 1rem;
+    border: 2px solid #ccc;
+    background-color: white;
+    color: var(--secondary-color);
+    font-family: inherit;
+    left: 2.5%;
+}
+
+button[type="submit"] {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #cc0000;
+}
+
+footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Reset base styles */
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+/* Full-width header styling */
+header {
+    width: 100%;
+    background-color: var(--secondary-color); /* Black from root variables */
+    color: white;
+    position: sticky; /* Stick to top of screen */
+    top: 0;
+    z-index: 999;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%; /* Add horizontal spacing from edges */
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease;
+}
+
+/* Navigation links layout */
+.nav-links {
+    display: flex;
+    gap: 2rem; /* Space between buttons */
+    align-items: center;
+    padding-top: 0.4rem; /* Slight vertical alignment fix */
+}
+
+/* Interactive navigation boxes (buttons) */
+.nav-links li a {
+    background-color: white;
+    color: var(--secondary-color); /* Black text */
+    padding: 0.6rem 1.2rem;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links li a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Add shadow on hover */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+/* Improve spacing for "About" section */
+.about .container {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    max-width: 1800px; /* Optional - limits width and centers it visually */
+    margin: auto;
+}
+.projects .container {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    max-width: 1800px; /* Optional - limits width and centers it visually */
+    margin: auto;
+}
+
+.contact .container {
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    max-width: 1100px; /* Optional - limits width and centers it visually */
+    margin: auto;
+}
