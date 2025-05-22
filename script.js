@@ -14,3 +14,20 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Reset form
     this.reset();
 });
+
+let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+window.addEventListener('scroll', function() {
+  let currentScrollTop = window.pageYOffset || document.documentElement.scrollTop;
+  const header = document.getElementById('mainHeader');
+
+  if (currentScrollTop > lastScrollTop) {
+    // Scrolling down
+    header.classList.add('hidden');
+  } else {
+    // Scrolling up
+    header.classList.remove('hidden');
+  }
+
+  lastScrollTop = currentScrollTop;
+});
