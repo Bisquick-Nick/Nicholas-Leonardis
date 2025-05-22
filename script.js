@@ -14,7 +14,9 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     // Reset form
     this.reset();
 });
-
+window.addEventListener('DOMContentLoaded', () => {
+  console.log("Site loaded!"); // Test if script runs on live site
+});
 let lastScrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
 window.addEventListener('scroll', function() {
