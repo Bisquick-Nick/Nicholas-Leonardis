@@ -128,7 +128,6 @@ section h3 {
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
-    left: 2.5;
 }
 
 .card:hover {
@@ -246,4 +245,69 @@ html {
     padding-right: 2.5%;
     max-width: 1100px; /* Optional - limits width and centers it visually */
     margin: auto;
+}
+@media (max-width: 768px) {
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1rem;
+    }
+    .hero h2 {
+        font-size: 2rem;
+    }
+    .hero p {
+        max-width: 90%;
+        font-size: 1rem;
+    }
+    .hero img {
+        margin-left: 0;
+        width: 80px; /* Smaller profile pic on mobile */
+    }
+}
+@media (max-width: 600px) {
+    .navbar {
+        padding: 1rem 3%;
+    }
+    .nav-links {
+        gap: 1rem;
+    }
+    .nav-links li a {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .project-grid {
+        gap: 1.5rem; /* Reduce spacing */
+    }
+}
+
+@media (max-width: 480px) {
+    .project-grid {
+        grid-template-columns: 1fr; /* Single column on small phones */
+    }
+}
+@media (max-width: 600px) {
+    form input, form textarea {
+        font-size: 1rem;
+        padding: 0.8rem;
+    }
+    button[type="submit"] {
+        font-size: 1rem;
+    }
+}
+@media (max-width: 768px) {
+    .about .container,
+    .projects .container,
+    .contact .container {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+}
+.video-container {
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 1;
 }
