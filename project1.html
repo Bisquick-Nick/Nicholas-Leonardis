@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 1 - Nicholas Leonardis</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Header/Navigation -->
+  <header id="mainHeader">
+    <nav class="navbar">
+      <div class="logo">Nicholas Leonardis</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Back to Projects</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Project Section -->
+  <section id="project" class="about">
+    <div class="container">
+      <h3>Project Title</h3>
+      <p style="color: #000;">These are the highlights of my Blender projects, some scenes taking hours and multiple days to create. I modeled almost everything in these renders and used a few textures I found off of the internet. I started this as a hobby during the 2020 pandemic and found I really enjoyed it.
+</p>
+
+      <!-- Image Gallery -->
+      <div class="image-grid">
+        <img src="Sun.png" alt="Image 1" />
+        <img src="Bounce.png" alt="Image 2" />
+        <img src="Hike.png" alt="Image 3" />
+      </div>
+    </div>
+</section>
+
+  <!-- Add video to the grid -->
+  <video class="gallery-video" autoplay muted loop playsinline>
+    <source src="car.mp4" type="video/mp4"> 
+  </video>
+</div>
+
+  <!-- Footer -->
+  <footer style="background: #1a1a1a; color: white; padding: 2rem;">
+    <p>&copy; 2025 Nicholas Leonardis. All rights reserved.</p>
+    <a href="index.html" style="color: red;">← Back to Portfolio</a>
+  </footer>
+
+  <style>
+    /* Red/Black/White Theme */
+    body {
+      background-color: white;
+      color: black;
+      font-family: Arial, sans-serif;
+    }
+    .navbar {
+      background-color: #1a1a1a;
+      color: white;
+    }
+    .nav-links a {
+      color: red !important;
+    }
+
+    /* Responsive Image Grid */
+    .image-grid {
+      display: grid;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .image-grid img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .image-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</body>
+</html>
