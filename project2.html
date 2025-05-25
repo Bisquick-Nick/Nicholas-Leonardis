@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Alternating Layout</title>
+  <style>
+    :root {
+      --primary-color: #FF0000;
+      --secondary-color: #1a1a1a;
+      --accent-color: white;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+   header {
+    position: relative;
+  background-color: var(--secondary-color);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  object-fit: fill;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  object-fit: cover;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.nav-toggle .hamburger::before {
+  transform: translateY(-8px);
+}
+
+.nav-toggle .hamburger::after {
+  transform: translateY(8px);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background-color: var(--secondary-color);
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 200px;
+    padding: 1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 1.8rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+.navbar {
+      background-color: #1a1a1a;
+      color: white;
+    }
+    .nav-links a {
+      color: rgb(0, 0, 0) !important;
+    }
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+    }
+
+    .feature {
+      display: flex;
+      gap: 3rem;
+      align-items: center;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
+    }
+
+    .image-block img {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: calc(50% - 1rem);
+      transition: transform 0.3s ease;
+    }
+
+    .image-block img:hover {
+      transform: scale(1.02);
+    }
+
+    .text-block {
+      width: calc(50% - 1rem);
+      padding-right: 1rem;
+    }
+
+    .feature.reverse {
+      flex-direction: row-reverse;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .image-block, .text-block {
+        width: 100%;
+        padding-right: 0 !important;
+      }
+      
+      .feature.reverse {
+        flex-direction: column-reverse;
+      }
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+    .feature.reverse{
+      max-height: 60%;
+      max-width: 60%;
+      position: relative;
+      align-items: center;
+      left: 10%;
+    }
+  </style>
+</head>
+<body>
+  <header style="background-color: #1a1a1a; color: white; padding: 1rem 5%; position: sticky; top: 0; z-index: 999;">
+    <nav class="navbar">
+      <div class="logo">3D printing and Tech Application</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Back to Projects</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Image - Text -->
+    <div class="feature">
+      <div class="image-block">
+        <img src="project2/headset.png">
+        <img src="project2/IMG_7986.webp" alt="Image Description 1">
+      </div>
+      <div class="text-block">
+        <h2>Headset Fix</h2>
+        <p style="color: #000;">I fixed a headset by measuring and modeling a printable piece. It has worked for about a year and shows no signs of failing. 
+      </div>
+    </div>
+
+    <!-- Text - Image -->
+    <div class="feature reverse">
+      <div class="image-block">
+        <img src="project2/IMG_7987.webp" alt="Image Description 2">
+        <video src="project2/IMG_7993.mov" style="width: 50%; height: 50%" autoplay muted loop playsinline>
+      </div>
+      <div class="text-block">
+        <h2>Clone Trooper Helmet</h2>
+        <p style="color: #000;">I printed out this entire helmet piece by piece for fun. Found the model off of the internet and split it up, It came out better than I thought it would. </p>
+      </div>
+    </div>
+
+    <!-- Image - Text -->
+    <div class="feature">
+      <div class="image-block">
+        <img src="project2/IMG_7988.jpg" alt="Image Description 3">
+        <img src="project2/IMG_7992.jpg" alt="Image Description 3">
+      </div>
+      <div class="text-block">
+        <h2>Window Brackets</h2>
+        <p style="color: #000;">I have windows that require brackets to keep it in place, some of the brackets broke/ went missing. I measured and modeled improved versions of the original brackets that are better secured to the frame. </p>
+      </div>
+    </div>
+
+    <!-- Text - Image -->
+    <div class="feature reverse">
+      <div class="image-block">
+        <img src="project2/image.webp" alt="Image Description 4">
+      </div>
+      <div class="text-block">
+        <h2>Raspberry Pi</h2>
+        <p style="color: #000;">I own a Raspberry Pi and implemented a small touch screen onto it. I used raspbian os lite as the operating system. I later used it for a small project and found it wasn't what I was looking for. It was a fun activity to try out.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Nicholas Leonardis. All rights reserved.
+    <a href="#" style="color: var(--primary-color); display: block; margin-top: 1rem;">Back to Top ↑</a>
+  </footer>
+</body>
+</html>
