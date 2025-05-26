@@ -13,10 +13,14 @@
   --accent-color: white;
 }
 
+html, body {
+  overflow-x:hidden 
+} 
+
 body {
   margin: 0;
   padding: 0;
-  overflow-x: hidden;
+  position: relative;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: var(--accent-color);
   color: var(--secondary-color);
@@ -76,9 +80,11 @@ header {
 }
 
 .nav-links {
+  position: relative;
   display: flex;
   gap: 2rem;
   list-style: none;
+  width: fit-content;
 }
 
 .nav-links li a {
@@ -86,9 +92,12 @@ header {
   color: var(--secondary-color);
   padding: 0.6rem 1.2rem;
   border-radius: 8px;
+    width: 100%;
   font-weight: bold;
   text-decoration: none;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative; 
+  overflow: hidden;
 }
 
 .nav-links li a:hover {
@@ -140,7 +149,7 @@ video {
 
 .hero img {
   max-width: 100px;
-  border-radius: 50%;
+  border-radius: 10%;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -167,6 +176,7 @@ section h3 {
 }
 
 .card {
+  position: relative;
   background-color: #f8f8f8;
   color: var(--secondary-color);
   padding: 1.5rem;
@@ -181,6 +191,7 @@ section h3 {
 
 form input,
 form textarea {
+  position: relative;
   width: 100%;
   padding: 1rem;
   margin-top: 1rem;
@@ -213,33 +224,26 @@ footer {
 }
 
 @media (max-width: 768px) {
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    background-color: var(--secondary-color);
-    position: absolute;
-    top: 100%;
-    right: 0;
-    width: 200px;
-    padding: 1rem;
-  }
-
-  .nav-links.active {
-    display: flex;
-  }
-
-  .nav-toggle {
-    display: block;
-  }
 
   .hero-content h2 {
     font-size: 1.8rem;
   }
-
+.nav-links {
+  position: relative;
+  display: ruby ;
+  list-style: none;
+  right:10%;
+  width: fit-content;
+}
+.logo {
+  font-weight: bold;
+  font-size: 1rem;
+}
   .hero p {
     font-size: 1rem;
     max-width: 90%;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -263,7 +267,7 @@ footer {
     <!-- Header/Navigation -->
 <header id="mainHeader">
     <nav class="navbar">
-        <div class="logo">Nicholas Leonardis</div>
+        <div class="logo">Welcome!</div>
         <ul class="nav-links">
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -331,7 +335,7 @@ footer {
             <form id="contactForm">
                 <input type="text" placeholder="Your Name" required />
                 <input type="email" placeholder="Your Email" required />
-                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <textarea placeholder="Your Message" rows="5"  required></textarea>
                 <button type="submit">Send Message</button>
             </form>
         </div>
