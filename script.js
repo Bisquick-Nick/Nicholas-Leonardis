@@ -47,16 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
     navLinks.classList.toggle("active");
   });
 
-  // Scroll detection for header visibility
-  window.addEventListener("scroll", () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    if (scrollTop > lastScrollTop) {
-      header.classList.add("hidden"); // scroll down
-    } else {
-      header.classList.remove("hidden"); // scroll up
-    }
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-  });
 
   // Smooth scroll
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

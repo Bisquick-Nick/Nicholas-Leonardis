@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Project 3 - Nicholas Leonardis</title>
+  <link rel="stylesheet" href="style.css" /> <!-- Assumes styles are in style.css -->
+  <style>
+    :root {
+      --primary-color: #FF0000;
+      --secondary-color: #1a1a1a;
+      --accent-color: white;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    .container {
+      max-width: 80%;
+      margin: auto;
+      padding: 2rem 0;
+    }
+
+    .feature {
+      display: flex;
+      flex-direction: column-reverse;
+      gap: 1.5rem;
+      align-items: center;
+      width: 100%;
+    }
+
+    .reverse {
+      flex-direction: row !important;
+    }
+
+    .image-block,
+    .text-block {
+      width: 100% !important;
+    }
+
+    .image-block img,
+    .image-block video,
+    .image-block audio {
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    .audio-player {
+      display: block;
+      margin-top: 1rem;
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .reverse {
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+  </style>
+</head>
+<body>
+  <header style="position: sticky; top: 0; z-index: 999;">
+    <nav class="navbar">
+      <div class="logo">AI Image Generation Models</div>
+      <ul class="nav-links" style="display: flex; gap: 1rem; list-style: none;">
+        <li><a href="index.html">Back to Projects</a></li>
+        <li><a href="index.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Image - Text -->
+    <div class="feature reverse">
+      <div class="image-block">
+        <img src="project3/model.png" alt="3D Model Description" />
+        <audio controls class="audio-player">
+          <source src="project3/audio1.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="text-block">
+        <h2>Custom 3D Printer Mount</h2>
+        <p style="color: #000;">Designed and printed a custom mount for my 3D printer to reduce vibration. The design was iterated using CAD software and tested over several prints.</p>
+      </div>
+    </div>
+
+    <!-- Text - Image -->
+    <div class="feature">
+      <div class="image-block">
+        <img src="project3/arduino.jpg" alt="Arduino Project Description" />
+        <audio controls class="audio-player">
+          <source src="project3/audio2.mp3" type="audio/mpeg">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+      <div class="text-block">
+        <h2>Smart Door Sensor</h2>
+        <p style="color: #000;">Built a door sensor using Arduino and an IR module. The device logs data to an SD card and plays a sound when the door is opened unexpectedly.</p>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Nicholas Leonardis. All rights reserved.
+    <a href="index.html" style="color: red;">← Back to Portfolio</a>
+  </footer>
+</body>
+</html>
