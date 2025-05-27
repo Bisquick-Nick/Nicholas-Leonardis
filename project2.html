@@ -105,15 +105,22 @@
 
 @media (max-width: 768px) {
   .nav-links {
-    display: grid;
-    flex-direction: column;
+    display: flex;
     background-color: var(--secondary-color);
-    position: relative;
+    position: sticky;
     top: 0%;
     right: 0;
     width: 100px;
     padding: .1rem;
+    
   }
+  .nav-links li a {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  display: inline-block;
+}
 .nav-links li a:hover {
   transform: scale(1.05);
   box-shadow: 0 .5px 1px rgba(0, 0, 0, 0.2);
@@ -283,8 +290,7 @@
     <nav class="navbar">
       <div class="logo">3D printing and Tech Application</div>
       <ul class="nav-links">
-        <li><a href="index.html">Back to Projects</a></li>
-        <li><a href="index.html">Contact</a></li>
+        <li><a href="index.html">Back to Projects </a></li>
       </ul>
     </nav>
   </header>

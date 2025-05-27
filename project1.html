@@ -32,6 +32,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1rem 5%;
+  object-fit: cover;
 }
 
 .nav-toggle {
@@ -207,23 +208,36 @@ footer {
 
 @media (max-width: 768px) {
   .nav-links {
-    display: none;
-    flex-direction: column;
+    display: flex;
     background-color: var(--secondary-color);
-    position: absolute;
-    top: 100%;
+    position: sticky;
+    top: 0%;
     right: 0;
-    width: 200px;
-    padding: 1rem;
+    width: 100px;
+    padding: .1rem;
+    
   }
-
+  .nav-links li a {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  display: inline-block;
+}
+.nav-links li a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 .5px 1px rgba(0, 0, 0, 0.2);
+}
   .nav-links.active {
     display: flex;
   }
-
-  .nav-toggle {
-    display: block;
-  }
+  .navbar {
+      background-color: #1a1a1a;
+      color: white;
+    }
+    .nav-links a {
+      color: rgb(0, 0, 0) !important;
+    }
 
   .hero-content h2 {
     font-size: 1.8rem;
@@ -264,7 +278,6 @@ footer {
       <div class="logo">Blender Projects/ 3D modeling</div>
       <ul class="nav-links">
         <li><a href="index.html">Back to Projects</a></li>
-        <li><a href="index.html">Contact</a></li>
       </ul>
     </nav>
   </header>
@@ -303,13 +316,6 @@ footer {
       background-color: white;
       color: black;
       font-family: Arial, sans-serif;
-    }
-    .navbar {
-      background-color: #1a1a1a;
-      color: white;
-    }
-    .nav-links a {
-      color: rgb(0, 0, 0) !important;
     }
 
     /* Responsive Image Grid */
