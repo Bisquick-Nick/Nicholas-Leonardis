@@ -2,10 +2,17 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Project 3 - Nicholas Leonardis</title>
-  <link rel="stylesheet" href="style.css" /> <!-- Assumes styles are in style.css -->
-  <style>
+  <title>Enhanced Project Page</title>
+  <!-- Styles copied from project2.html remain unchanged here -->
+<style>
+    /* Add in your existing style section */
+.image-block img,
+.image-block video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
     :root {
       --primary-color: #FF0000;
       --secondary-color: #1a1a1a;
@@ -20,55 +27,246 @@
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 999;
-      background-color: var(--secondary-color);
+   header {
+    position: relative;
+  background-color: var(--secondary-color);
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  object-fit: fill;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 5%;
+  object-fit: cover;
+}
+
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle .hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  position: relative;
+}
+
+.nav-toggle .hamburger::before,
+.nav-toggle .hamburger::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  transition: 0.3s;
+}
+
+.nav-toggle .hamburger::before {
+  transform: translateY(-8px);
+}
+
+.nav-toggle .hamburger::after {
+  transform: translateY(8px);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+}
+
+.nav-links li a {
+  background-color: white;
+  color: black;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.nav-links li a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex;
+    background-color: var(--secondary-color);
+    position: sticky;
+    top: 0%;
+    right: 0;
+    width: 100px;
+    padding: .1rem;
+    
+  }
+  .nav-links li a {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  font-size: 18px;
+  display: inline-block;
+}
+.nav-links li a:hover {
+  transform: scale(1.05);
+  box-shadow: 0 .5px 1px rgba(0, 0, 0, 0.2);
+}
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .hero-content h2 {
+    font-size: 1rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+}
+.navbar {
+      background-color: #1a1a1a;
       color: white;
     }
-
-    .navbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem 5%;
+    .nav-links a {
+      color: rgb(0, 0, 0) !important;
     }
-
     .container {
-      max-width: 80%;
-      margin: auto;
-      padding: 2rem 0;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
     }
 
     .feature {
       display: flex;
-      flex-direction: column-reverse;
-      gap: 1.5rem;
+      gap: 3rem;
       align-items: center;
-      width: 100%;
+      margin-bottom: 4rem;
+      flex-wrap: wrap;
     }
 
-    .reverse {
-      flex-direction: row !important;
-    }
-
-    .image-block,
-    .text-block {
-      width: 100% !important;
-    }
-
-    .image-block img,
-    .image-block video,
-    .image-block audio {
-      width: 100%;
+    .image-block img {
       max-width: 100%;
-      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: calc(50% - 1rem);
+      transition: transform 0.3s ease;
     }
 
-    .audio-player {
-      display: block;
-      margin-top: 1rem;
+    .image-block img:hover {
+      transform: scale(1.02);
+    }
+
+    .text-block {
+      width: calc(50% - 1rem);
+      padding-right: 1rem;
+    }
+
+    .feature.reverse {
+      flex-direction: row-reverse;
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .image-block, .text-block {
+        width: 100%;
+        padding-right: 0 !important;
+      }
+      
+      .feature.reverse {
+        flex-direction: column-reverse;
+      }
+      @media (max-width: 768px) {
+  .feature {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem; /* Reduce spacing between blocks */
+  }
+
+  .image-block,
+  .text-block {
+    width: 100%;
+    padding-right: 0 !important;
+    margin-bottom: 1rem; /* Add space between stacked elements */
+  }
+
+  .feature.reverse {
+    flex-direction: column;
+    left: 0 !important; /* Remove forced horizontal offset */
+  }
+}
+.text-block {
+  width: calc(50% - 1rem);
+  padding-right: 1rem;
+}
+
+@media (max-width: 768px) {
+  .text-block {
+    padding-left: 1rem; /* Add left padding on mobile */
+  }
+}
+@media (max-width: 768px) {
+  /* Header/Nav */
+  .navbar {
+    padding: 0.5rem 5%;
+  }
+
+  /* Features Layout */
+  .feature {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  .image-block,
+  .text-block {
+    width: 100% !important;
+    padding-right: 0 !important;
+  }
+
+  /* Image Scaling */
+  .image-block img,
+  .image-block video {
+    width: 150%;
+    height: max-content;
+  }
+
+  /* Text Block Spacing */
+  .text-block {
+    text-align: left;
+    margin-top: 0.5rem; /* Space between image and text block */
+  }
+
+  /* Remove conflicting reverse layout styles */
+  .feature.reverse {
+    flex-direction: column !important;
+    left: 0 !important;
+  }
+}
+
     }
 
     footer {
@@ -78,54 +276,89 @@
       padding: 2rem 1rem;
       font-size: 0.9rem;
     }
+    .feature.reverse{
+      max-height: 60%;
+      max-width: 60%;
+      position: relative;
+      align-items: center;
+      left: 10%;
+    }
 
-    .reverse {
-      justify-content: space-between;
-      flex-wrap: wrap;
+    .multimedia-block {
+      width: calc(50% - 1rem);
+      padding-left: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .multimedia-block audio {
+      max-width: 100%;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    }
+
+    @media (max-width: 768px) {
+      .multimedia-block {
+        width: 100%;
+        padding-left: 0 !important;
+      }
     }
   </style>
 </head>
 <body>
-  <header style="position: sticky; top: 0; z-index: 999;">
+  <header style="background-color: #1a1a1a; color: white; padding: 1rem 5%; position: sticky; top: 0; z-index: 999;">
     <nav class="navbar">
-      <div class="logo">AI Image Generation Models</div>
-      <ul class="nav-links" style="display: flex; gap: 1rem; list-style: none;">
-        <li><a href="index.html">Back to Projects</a></li>
-        <li><a href="index.html">Contact</a></li>
+      <div class="logo">AI Generation</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Back to Projects </a></li>
       </ul>
     </nav>
   </header>
 
   <div class="container">
-    <!-- Image - Text -->
-    <div class="feature reverse">
-      <div class="image-block">
-        <img src="project3/model.png" alt="3D Model Description" />
-        <audio controls class="audio-player">
-          <source src="project3/audio1.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+
+    <!-- New Section: One Image + Two Audio Files -->
+    <div class="feature">
+        <div class="text-block">
+        <h2>RVC voice cloning (2023)</h2>
+        <p style="color: #000;">Using my voice I created a data set and trained it on the RVC 2.0 model. I was able to synthesize my voice with Frank Senatras “That's Life”. I can do this with any song and voice. </p>
       </div>
-      <div class="text-block">
-        <h2>Custom 3D Printer Mount</h2>
-        <p style="color: #000;">Designed and printed a custom mount for my 3D printer to reduce vibration. The design was iterated using CAD software and tested over several prints.</p>
+      <div class="image-block">
+        <img src="image.png" style="height: 150%; width:150%"alt="Audio Project">
+      </div>
+      <div class="multimedia-block">
+        <audio controls>
+          <source src="project 3/thats_nick.mov" type="audio/mpeg">
+        </audio>
+        <audio controls>
+          <source src="project 3/That's Life (Remastered 2008) (320 kbps).mp3" type="audio/mp3">
+        </audio>
       </div>
     </div>
 
-    <!-- Text - Image -->
+    <!-- New Section: Two Images, Text Box, Video, Text Box -->
     <div class="feature">
-      <div class="image-block">
-        <img src="project3/arduino.jpg" alt="Arduino Project Description" />
-        <audio controls class="audio-player">
-          <source src="project3/audio2.mp3" type="audio/mpeg">
-          Your browser does not support the audio element.
-        </audio>
+              <div class="text-block">
+        <h2>Image Generation</h2>
+        <p style="color: #000;">I took a dataset and trained my face on the stable diffusion XL model. I created a Lora with the Kohya training tools. All using an RTX 3070.ing PLA.</p>
       </div>
-      <div class="text-block">
-        <h2>Smart Door Sensor</h2>
-        <p style="color: #000;">Built a door sensor using Arduino and an IR module. The device logs data to an SD card and plays a sound when the door is opened unexpectedly.</p>
+      <div class="image-block">
+        <img src="project 3/image1.png" alt="Image 1">
+        <img src="project 3/ComfyUI_temp_rypdi_00032_.png" alt="Image 2">
       </div>
     </div>
+
+    <div class="feature reverse">
+      <div class="image-block">
+              <div class="text-block">
+        <h2>Ai Generated Video 2023</h2>
+        <p style="color: #000;">Used Stable Diffusion XL and control net to create this video. I trained a Lora on the character dancing and made several other versions after this.</p>
+      </div>
+        <video src="project 3/ohyeah0001-0370.mov" autoplay muted loop playsinline></video>
+      </div>
+    </div>
+
   </div>
 
   <footer>
