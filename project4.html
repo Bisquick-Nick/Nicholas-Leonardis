@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Project 4 - Research Project</title>
+  <style>
+    :root {
+      --primary-color: #FF0000;
+      --secondary-color: #1a1a1a;
+      --accent-color: white;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--accent-color);
+      color: var(--secondary-color);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    header {
+      background-color: var(--secondary-color);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 5%;
+    }
+
+    .logo {
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links li a {
+      background-color: white;
+      color: black;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .nav-links li a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 4rem 5%;
+    }
+
+    .feature {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-bottom: 3rem;
+      align-items: flex-start;
+    }
+
+    .text-block {
+      flex: 1;
+    }
+
+    .pdf-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    iframe {
+      width: 100%;
+      height: 500px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">Project 4: Research & Presentation</div>
+      <ul class="nav-links">
+        <li><a href="index.html">Back to Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <!-- Synopsis -->
+    <div class="feature">
+      <div class="text-block">
+        <h2>Project Synopsis</h2>
+        <p style="color: #000;">
+          I had to observe 4 years of balance sheets and company data to find whether or not I should invest in AMD. This project was a test of my data analysis skills, my excel skills and mathematical economic skills. I had a lot of fun learning about my company and other competing companies to come to a better conclusion. I then presented my findings to my instructor and peers and gave a thorough explanation about the company's significance. 
+        </p>
+      </div>
+    </div>
+
+    <!-- PDFs -->
+    <div class="feature">
+      <div class="pdf-block">
+        <h2>PowerPoint</h2>
+        <iframe src="project4/Nicholas Leonardis -- presentation.pptx.pdf"></iframe>
+      </div>
+      <div class="pdf-block">
+        <h2>Write-Up</h2>
+        <iframe src="project4/AMD FINAL.pdf"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Nicholas Leonardis. All rights reserved.
+    <a href="index.html" style="color: red;">← Back to Portfolio</a>
+  </footer>
+</body>
+</html>
